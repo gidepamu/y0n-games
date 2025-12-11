@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Tic Tac Toe Online</h1>
+
+  <!-- LOBBY -->
+  <div id="lobby">
+    <input type="text" id="playerName" placeholder="Masukkan nama kamu" />
+    <input type="text" id="roomName" placeholder="Masukkan nama room" />
+    <button id="joinBtn">Gabung Game</button>
+  </div>
+
+  <!-- SUIT -->
+  <div id="suitSection" style="display:none;">
+    <h2>Suit untuk menentukan giliran pertama!</h2>
+    <p>Pilih: 
+      <button class="suit" data-choice="batu">🪨</button>
+      <button class="suit" data-choice="gunting">✂️</button>
+      <button class="suit" data-choice="kertas">📄</button>
+    </p>
+    <p id="suitStatus"></p>
+  </div>
+
+  <!-- GAME -->
+  <div id="game" style="display:none;">
+    <div id="info">
+      <h3 id="turnInfo"></h3>
+      <p id="scoreInfo"></p>
+    </div>
+    <div id="board"></div>
+    <button id="resetBtn">Reset Game</button>
+  </div>
+
+  <!-- POPUP WINNER -->
+  <div id="popupWinner" class="popup">
+    <div class="popup-content">
+      <h2 id="popupText"></h2>
+      <button id="popupBtn">Main Lagi</button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

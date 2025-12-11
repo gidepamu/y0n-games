@@ -1,0 +1,191 @@
+/* ==== Global theme === */
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: #00ff66;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  border: 4px solid #00ff66;
+  padding: 40px;
+  width: 380px;
+  background: #000;
+  box-shadow: 0 0 20px #00ff66;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px #00ff66;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 3px #00ff66; }
+  to { text-shadow: 0 0 12px #00ff66; }
+}
+
+/* ==== Buttons / Links === */
+.game-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  margin: 5px;
+  color: #00ff66;
+  border: 2px solid #00ff66;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.game-btn:hover {
+  background: #00ff66;
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #00ff66;
+}
+
+/* ==== Input === */
+.input-box {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  background: #000;
+  color: #00ff66;
+  border: 2px solid #00ff66;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.input-box:focus {
+  box-shadow: 0 0 8px #00ff66;
+}
+
+/* ==== Footer / Small Text === */
+.footer {
+  margin-top: 25px;
+  opacity: 0.7;
+  font-size: 14px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ==== Lists === */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 3px 0;
+}
+
+/* ==== Duel layout tweak === */
+.duel-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.panel {
+  border: 2px solid #00ff66;
+  padding: 16px;
+  background: #000;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #00ff66;
+}
+
+.small {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00ff66;
+  text-shadow: 0 0 5px #00ff66;
+}
+
+/* ==== Canvas Style (for Tetris board) === */
+canvas {
+  display: block;
+  background: #111;
+  border: 2px solid #00ff66;
+  margin: 10px auto;
+  image-rendering: pixelated;
+}
+
+/* ==== Animations for old-school flicker === */
+@keyframes crtFlicker {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 1; }
+}
+
+body {
+  animation: crtFlicker 1.8s infinite;
+}
+
+/* ==== Scroll fix (for mobile) === */
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
+button.game-btn {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+button.game-btn:focus {
+  outline: none;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.stats {
+  text-align: left;
+  font-family: 'Courier New', monospace;
+  color: #66ff66;
+  font-size: 18px;
+}
+
+.stats p {
+  margin: 4px 0;
+}
+
+.game-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #66ff66;
+  color: #66ff66;
+  padding: 5px 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.game-btn:hover {
+  background-color: rgba(0,255,0,0.1);
+}

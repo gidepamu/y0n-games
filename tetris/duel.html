@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tetris — Duel (Skor Battle)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* tambahan kecil khusus duel */
+    .duel-panel { display:flex; gap:20px; align-items:flex-start; justify-content:center; margin-top:18px; }
+    .panel { border:2px solid #00ff66; padding:14px; width:320px; background:#000; }
+    .small { font-size:14px; opacity:.9; }
+    input, button { font-family: monospace; }
+    #board { background:#111; border:2px solid #00ff66; display:block; margin: 10px auto; }
+    .status { margin-top:10px; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">TETRIS — DUEL (Skor Battle)</h1>
+
+    <div class="duel-panel">
+      <div class="panel">
+        <h3>Create or Join Room</h3>
+
+        <div>
+          <div class="small">Player: <span id="playerNameLabel"></span></div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <button id="createRoomBtn" class="game-btn">➕ Create Room</button>
+        </div>
+
+        <div style="margin-top:12px;">
+          <input id="joinRoomInput" placeholder="Enter room code" class="input-box" />
+          <button id="joinRoomBtn" class="game-btn">🔗 Join Room</button>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div>Room Code: <span id="roomCode">—</span></div>
+          <div class="small">Players in room:</div>
+          <ul id="playersList"></ul>
+        </div>
+
+        <div class="status" id="matchStatus">Status: waiting</div>
+      </div>
+
+      <div class="panel">
+        <h3>Game</h3>
+        <canvas id="board" width="240" height="480"></canvas>
+
+        <div style="margin-top:8px;">
+          <div>Score: <span id="scoreDisplay">0</span></div>
+          <div>Opponent: <span id="opponentName">—</span></div>
+          <div>Result: <span id="result">—</span></div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <button id="startGameBtn" class="game-btn">▶ Start Game</button>
+          <button id="forfeitBtn" class="game-btn" style="margin-left:8px">⛔ Forfeit</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer" style="margin-top:18px">Tip: Kirim kode room ke temanmu untuk gabung.</p>
+  </div>
+
+  <script type="module" src="duel.js"></script>
+</body>
+</html>

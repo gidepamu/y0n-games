@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tetris - Enter Name</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2 class="title">ENTER NAME</h2>
+
+  <input id="playerName" class="input-box" placeholder="Your name..." />
+
+  <button class="game-btn" id="startBtn">CONTINUE</button>
+</div>
+
+<script type="module">
+import { db, ref, set } from "./firebase.js";
+
+document.getElementById('startBtn').onclick = async () => {
+  const name = document.getElementById("playerName").value;
+
+  if (!name) return alert("Enter name");
+
+  await set(ref(db, "players/" + name), {
+    name,
+    lastLogin: Date.now(),
+  });
+
+  localStorage.setItem("playerName", name);
+  window.location = "menu.html";
+};
+</script>
+
+</body>
+</html>

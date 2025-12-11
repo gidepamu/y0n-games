@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tetris Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="title">TETRIS</h1>
+
+  <div class="menu">
+    <a class="game-btn" href="tetris.html">▶ Single Player</a>
+    <a class="game-btn" href="duel.html">▶ Duel Online</a>
+  </div>
+
+  <p class="footer">Player: <span id="player"></span></p>
+</div>
+
+<script>
+document.getElementById("player").innerText =
+  localStorage.getItem("playerName") || "Unknown";
+</script>
+
+</body>
+</html>
